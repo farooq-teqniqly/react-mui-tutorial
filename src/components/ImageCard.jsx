@@ -2,7 +2,6 @@ import React from "react";
 import {
   Card,
   CardHeader,
-  Avatar,
   IconButton,
   CardMedia,
   CardContent,
@@ -11,6 +10,7 @@ import {
   Checkbox,
 } from "@mui/material";
 import { FavoriteBorder, Favorite, Share } from "@mui/icons-material";
+import LetterAvatar from "./LetterAvatar";
 
 export default function ImageCard({
   image,
@@ -25,9 +25,9 @@ export default function ImageCard({
     <Card sx={{ margin: "20px" }}>
       <CardHeader
         avatar={
-          <Avatar sx={{ bgcolor: "red" }} aria-label={avatarAriaLabel}>
+          <LetterAvatar ariaConfig={{ ariaLabel: avatarAriaLabel }}>
             {avatarText}
-          </Avatar>
+          </LetterAvatar>
         }
         title={title}
         subheader={subheader}

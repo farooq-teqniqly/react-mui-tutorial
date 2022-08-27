@@ -7,22 +7,15 @@ import {
   Box,
   InputBase,
   Badge,
-  Avatar,
   Menu,
   MenuItem,
 } from "@mui/material";
 import { Pets, Mail, Notifications } from "@mui/icons-material";
+import LetterAvatar from "./LetterAvatar";
 
 const StyledToolbar = styled(Toolbar)({
   display: "flex",
   justifyContent: "space-between",
-});
-
-const LetterAvatar = styled(Avatar)({
-  backgroundColor: "orange",
-  width: 30,
-  height: 30,
-  fontSize: "small",
 });
 
 const Search = styled("div")(({ theme }) => ({
@@ -66,10 +59,15 @@ export const Navbar = () => {
           <Badge badgeContent={2} color="error">
             <Notifications></Notifications>
           </Badge>
-          <LetterAvatar onClick={(e) => setOpen(true)}>FM</LetterAvatar>
+          <LetterAvatar
+            ariaConfig={{ ariaLabel: "FM" }}
+            clickHandler={(e) => setOpen(true)}
+          >
+            FM
+          </LetterAvatar>
         </Icons>
         <UserBox>
-          <LetterAvatar onClick={(e) => setOpen(true)}>FM</LetterAvatar>
+          <LetterAvatar clickHandler={(e) => setOpen(true)}>FM</LetterAvatar>
           <Typography variant="span">farooqam</Typography>
         </UserBox>
       </StyledToolbar>
