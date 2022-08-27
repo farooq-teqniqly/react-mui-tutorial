@@ -16,22 +16,24 @@ import MenuItems from "../menuItems";
 export const Sidebar = () => {
   return (
     <Box flex={1} p={2} sx={{ display: { xs: "none", sm: "block" } }}>
-      <List>
-        {MenuItems.map((item) => (
-          <ListItem key={item.id} disablePadding>
-            <ListItemButton component="a" href={item.href}>
-              <ListItemIcon>{item.icon}</ListItemIcon>
-              <ListItemText primary={item.caption} />
-            </ListItemButton>
+      <Box position="fixed">
+        <List>
+          {MenuItems.map((item) => (
+            <ListItem key={item.id} disablePadding>
+              <ListItemButton component="a" href={item.href}>
+                <ListItemIcon>{item.icon}</ListItemIcon>
+                <ListItemText primary={item.caption} />
+              </ListItemButton>
+            </ListItem>
+          ))}
+          <ListItem>
+            <ListItemIcon>
+              <DarkMode></DarkMode>
+            </ListItemIcon>
+            <Switch></Switch>
           </ListItem>
-        ))}
-        <ListItem>
-          <ListItemIcon>
-            <DarkMode></DarkMode>
-          </ListItemIcon>
-          <Switch></Switch>
-        </ListItem>
-      </List>
+        </List>
+      </Box>
     </Box>
   );
 };

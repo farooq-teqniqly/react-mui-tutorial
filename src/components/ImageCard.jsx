@@ -22,7 +22,7 @@ export default function ImageCard({
   avatarAriaLabel,
 }) {
   return (
-    <Card>
+    <Card sx={{ margin: "20px" }}>
       <CardHeader
         avatar={
           <Avatar sx={{ bgcolor: "red" }} aria-label={avatarAriaLabel}>
