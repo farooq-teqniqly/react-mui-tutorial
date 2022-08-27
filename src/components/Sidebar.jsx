@@ -6,7 +6,10 @@ import {
   ListItemButton,
   ListItemIcon,
   ListItemText,
+  Switch,
 } from "@mui/material";
+
+import DarkMode from "@mui/icons-material/DarkMode";
 
 import MenuItems from "../menuItems";
 
@@ -22,6 +25,12 @@ export const Sidebar = () => {
             </ListItemButton>
           </ListItem>
         ))}
+        <ListItem>
+          <ListItemIcon>
+            <DarkMode></DarkMode>
+          </ListItemIcon>
+          <Switch></Switch>
+        </ListItem>
       </List>
     </Box>
   );
