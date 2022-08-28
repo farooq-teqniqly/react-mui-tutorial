@@ -1,17 +1,24 @@
 import React from "react";
-import { styled, Avatar } from "@mui/material";
+import { Avatar } from "@mui/material";
 
-const StyledAvatar = styled(Avatar)({
-  backgroundColor: "orange",
-  width: 30,
-  height: 30,
-  fontSize: "small",
-});
-
-export default function LetterAvatar({ clickHandler, ariaConfig, children }) {
+export default function LetterAvatar({
+  clickHandler,
+  ariaConfig,
+  backgroundColor = "orange",
+  children,
+}) {
   return (
-    <StyledAvatar onClick={clickHandler} aria-label={ariaConfig?.ariaLabel}>
+    <Avatar
+      onClick={clickHandler}
+      aria-label={ariaConfig?.ariaLabel}
+      sx={{
+        backgroundColor: backgroundColor,
+        width: 30,
+        height: 30,
+        fontSize: "small",
+      }}
+    >
       {children}
-    </StyledAvatar>
+    </Avatar>
   );
 }
